@@ -33,10 +33,18 @@ services:
     # image: apache/apisix:${APISIX_IMAGE_TAG:-3.2.0-debian}
     # image: rizqia/apisix-demo-2
     # image: rizqia/apisix-java-jdk17
-    image: rizqia/apisix-java-jdk17:demo-3
+    # image: rizqia/apisix-java-jdk17:demo-3
+    # image: rizqia/apisix:3.2.0 #gk bisa, endpoint error maybe caused by volume not specified
+    # image: rizqia/apisix:demo-3 #bisa, base image from apisix_conf/Dockerfile
+    # image: rizqia/apisix:demo-4 #bisa, config inside image & run .jar using jre but still 899mb
+    # image: rizqia/apisix:demo-5 #gk bisa, walaupun light dgn java not installed but using apisix v3.2.0 and not included config
+    # image: rizqia/apisix-light:latest
+    # image: rizqia/apisix-light:1.0.0
+    # image: rizqia/apisix-light:1.0.1
+    image: apisix-light:1.0.0
     restart: "no"
-    volumes:
-      - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
+    # volumes:
+    #   - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
       # - /tmp/runner.sock:/tmp/runner.sock
     depends_on:
       - etcd
@@ -52,6 +60,7 @@ services:
 
   etcd:
     image: bitnami/etcd:3.4.15
+    # image: bitnami/etcd:3.4.9
     restart: "no"
     volumes:
       - etcd_data:/bitnami/etcd
