@@ -75,7 +75,7 @@ services:
       apisix:
 
   backend:
-    image: rizqi/backend
+    image: rizqia/demo-22:0.0.1
     restart: "no"
     volumes:
       - ./upstream/web1.conf:/etc/nginx/nginx.conf
