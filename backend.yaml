@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+spec: 
+  containers:
+  - name: backend
+    image: rizqia/demo-22:latest
+    ports: 
+      - containerPort: 8080
