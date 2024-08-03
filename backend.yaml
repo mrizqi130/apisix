@@ -4,7 +4,7 @@ metadata:
   name: backend
 spec: 
   containers:
-  - name: backend
-    image: rizqia/demo-22:latest
+  - name: demo-22
+    image: rizqia/demo-22
     ports: 
       - containerPort: 8080
