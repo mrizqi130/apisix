@@ -5,6 +5,6 @@ metadata:
 spec: 
   containers:
   - name: demo-22
-    image: rizqia/demo-22
+    image: nginx
     ports: 
       - containerPort: 8080
